@@ -61,7 +61,7 @@ public class AdvancementMixin {
                                 .replace("%avatarURL%", avatarURL)
                                 .replace("%playerColor%", "" + TextColors.generateFromUUID(player.getUUID()).getRGB())
                         );
-                        DiscordIntegration.INSTANCE.sendMessage(new DiscordMessage(b.build()),INSTANCE.getChannel(Configuration.instance().advanced.serverChannelID));
+                        DiscordIntegration.INSTANCE.sendMessage(new DiscordMessage(b.build()),INSTANCE.getChannel(Configuration.instance().advanced.advancementChannelID));
                     } else {
                         EmbedBuilder b = Configuration.instance().embedMode.advancementMessage.toEmbed();
                         b = b.setAuthor(MessageUtilsImpl.formatPlayerName(player), null, avatarURL)
@@ -81,7 +81,7 @@ public class AdvancementMixin {
                                         .replace("%advNameURL%", URLEncoder.encode(ChatFormatting.stripFormatting(advancement.display().get().getTitle().getString()), StandardCharsets.UTF_8))
                                         .replace("%advDescURL%", URLEncoder.encode(ChatFormatting.stripFormatting(advancement.display().get().getDescription().getString()), StandardCharsets.UTF_8))
                                 );
-                        DiscordIntegration.INSTANCE.sendMessage(new DiscordMessage(b.build()),INSTANCE.getChannel(Configuration.instance().advanced.serverChannelID));
+                        DiscordIntegration.INSTANCE.sendMessage(new DiscordMessage(b.build()),INSTANCE.getChannel(Configuration.instance().advanced.advancementChannelID));
                     }
                 } else
                     DiscordIntegration.INSTANCE.sendMessage(Localization.instance().advancementMessage.replace("%player%",
@@ -98,7 +98,7 @@ public class AdvancementMixin {
                                             .getString()))
                             .replace("%advNameURL%", URLEncoder.encode(ChatFormatting.stripFormatting(advancement.display().get().getTitle().getString()), StandardCharsets.UTF_8))
                             .replace("%advDescURL%", URLEncoder.encode(ChatFormatting.stripFormatting(advancement.display().get().getDescription().getString()), StandardCharsets.UTF_8))
-                            .replace("\\n", "\n"),INSTANCE.getChannel(Configuration.instance().advanced.serverChannelID));
+                            .replace("\\n", "\n"),INSTANCE.getChannel(Configuration.instance().advanced.advancementChannelID));
             }
         }
 
