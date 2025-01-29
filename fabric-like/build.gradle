@@ -11,10 +11,10 @@ dependencies {
     modImplementation "de.erdbeerbaerlp:dcintegration.common:$rootProject.core_version"
 
     modImplementation('me.lucko:fabric-permissions-api:0.3.3')
-    modImplementation "eu.pb4:placeholder-api:2.5.1+1.21.4"
+    modImplementation "eu.pb4:placeholder-api:2.5.2+1.21.3"
 
     //Styled Chat
-    modCompileOnly "maven.modrinth:styled-chat:2.7.1+1.21.4"
+    modCompileOnly "maven.modrinth:styled-chat:2.7.2+1.21.3"
 
     //Dynmap-API
     modCompileOnly('com.github.webbukkit:DynmapCoreAPI:2.5')

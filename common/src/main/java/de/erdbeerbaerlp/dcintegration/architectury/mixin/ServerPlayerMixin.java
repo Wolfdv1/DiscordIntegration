@@ -24,7 +24,7 @@ import static de.erdbeerbaerlp.dcintegration.common.DiscordIntegration.INSTANCE;
 
 @Mixin(ServerPlayer.class)
 public class ServerPlayerMixin {
-    @Inject(at = @At(value = "TAIL"), method = "die")
+    @Inject(at = @At(value = "TAIL"), method = "Lnet/minecraft/server/level/ServerPlayer;die(Lnet/minecraft/world/damagesource/DamageSource;)V")
     private void onPlayerDeath(DamageSource s, CallbackInfo info) {
         ServerPlayer p = (ServerPlayer) (Object) this;
         if (DiscordIntegration.INSTANCE != null) {
